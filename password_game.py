@@ -1,6 +1,6 @@
 pw = 'a123456'
 i = 3
-while True:
+while i > 0:
 	password = input('plz type in the password: ')
 	if pw == password:
 		print('you can login')
@@ -8,5 +8,3 @@ while True:
 	else:
 		i = i -1
 		print('error password', i , ' time left')
-		if i == 0:
-			break
