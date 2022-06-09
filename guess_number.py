@@ -1,6 +1,9 @@
 import random
 
-r = random.randint(1,100)
+start = int(input('plz decide your start number!  '))
+end = int(input('plz decide your end number!  '))
+
+r = random.randint(start, end)
 count = 0
 while True:
 	count += 1
