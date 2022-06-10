@@ -9,3 +9,7 @@ for car in cars:
 names = ['allen', 'morgan', 'david']
 for name in names:
 	print(name)
+
+name = ['allen', 'tom', 'mayday', 'JJ', 'jolin']
+for name in names:
+	print('hi ', name)
