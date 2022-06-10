@@ -4,3 +4,8 @@ cars = ['Toyota', 'Honda']
 
 for car in cars:
 	print(car)
+
+
+names = ['allen', 'morgan', 'david']
+for name in names:
+	print(name)
