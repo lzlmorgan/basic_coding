@@ -20,5 +20,13 @@ for d in data: #d是data留言list中每一笔的留言
 	if len(d) < 100:
 		new.append(d)
 print(len(new), '笔留言长度小于100')
-print(new[0])
-print(new[1])
+print(new[0]) #打出第一笔长度小于100的留言
+print(new[1]) #打出第二笔长度小于100的留言
+
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+print(len(good), '笔留言中含有good')
+print(good[0]) #打印第一条含有good的留言
+print(good[1])
