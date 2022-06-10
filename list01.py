@@ -8,3 +8,5 @@ a.append('Audi') #append 加入清单
 print(a)
 print(len(a))
 
+print('Audi' in a)
+print('Benze' in a)	
