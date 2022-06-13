@@ -10,7 +10,6 @@ print(result)
 
 
 def average(numbers):
-	avg = sum(numbers) / len(numbers) #除法自动转化为float
-	return avg
-a = average([1, 2, 3])
-print(a)
+	return sum(numbers) / len(numbers) #除法自动转化为float	
+print(average([1, 2, 3]))
+
