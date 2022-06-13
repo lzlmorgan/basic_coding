@@ -12,4 +12,5 @@ print(result)
 def average(numbers):
 	return sum(numbers) / len(numbers) #除法自动转化为float	
 print(average([1, 2, 3]))
+print(average([21,333,200]))
 
