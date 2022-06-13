@@ -1,12 +1,20 @@
-#读取档案
+import os #operating system作业系统import
+
+
 products = []
-with open('products.csv', 'r', encoding = 'utf-8') as f:
-	for line in f:
-		if 'product, price' in line:
-			continue #continue跳过回直接到下一回
-		name, price = line.strip().split(',') #strip()去掉\n尾部回车 & split分割数据by comma s是清单
-		products.append([name, price]) #把name和price放入products list
-print(products)
+#检查档案是否存在
+if os.path.isfile('products.csv'): #os.path.isfile调用os插件功能来判断文件是否存在
+	print('yeah, the file exist!!!')
+	#读取档案
+	with open('products.csv', 'r', encoding = 'utf-8') as f:
+		for line in f:
+			if 'product, price' in line:
+				continue #continue跳过回直接到下一回
+			name, price = line.strip().split(',') #strip()去掉\n尾部回车 & split分割数据by comma s是清单
+			products.append([name, price]) #把name和price放入products list
+	print(products)
+else:
+	print('the file dose not exist!!!')
 
 #让使用者输入product和price
 while True:
@@ -20,7 +28,6 @@ while True:
 #print所有购买记录
 for p in products:
 	print(p[0], ' is with the price of', p[1]) #print出list p的第一个0和第二个1
-
 
 #写入档案
 with open('products.csv', 'w', encoding = 'utf-8') as f: #encoding加入编码规则
