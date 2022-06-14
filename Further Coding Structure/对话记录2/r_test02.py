@@ -10,8 +10,10 @@ def convert(lines):
     person = None
     allen_word_count = 0
     allen_sticker_count = 0
+    allen_image_count = 0
     viki_word_count = 0
     viki_sticker_count = 0
+    viki_image_count = 0
     for line in lines:
         s = line.split(' ')
         time = s[0]
@@ -19,17 +21,26 @@ def convert(lines):
         if name == "Allen":
             if s[2] == '貼圖':
                 allen_sticker_count += 1
+            elif s[2] == '圖片':
+                allen_image_count += 1
             else:
                 for m in s[2:]:
                     allen_word_count += len(m)
         elif name == 'Viki':
             if s[2] == '貼圖':
                 viki_sticker_count += 1
+            elif s[2] == '圖片':
+                viki_image_count += 1
             else:
                 for m in s[2:]:
                     viki_word_count += len(m)
-    print("allen has said" , allen_word_count, 'and send', allen_sticker_count, 'stickers')
-    print("Viki has said" , viki_word_count, 'and send', viki_sticker_count, 'stickers' )
+    print("allen has said" , allen_word_count, 'words')
+    print('allen has send', allen_sticker_count, 'stickers')
+    print('allen has send', allen_image_count, 'images')
+
+    print("Viki has said" , viki_word_count, 'words')
+    print('viki has send', viki_sticker_count, 'stickers')
+    print('viki has send', viki_image_count, 'images')
 
 
 def write_file(filename, lines):
