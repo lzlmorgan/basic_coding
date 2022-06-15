@@ -1,15 +1,14 @@
 import time
-import random
+import progressbar
 
 data = []
 count = 0
+bar = progressbar.ProgressBar(max_value = 1000000)
 with open ('reviews.txt', 'r') as f:
 	for line in f:
 		data.append(line)
 		count += 1
-		if count % 100000 == 0:
-			# %求余数整除
-			print(len(data))
+		bar.update(count)
 print('档案读取完成，一共有', len(data),'笔资料')
 
 start_time = time.time()
