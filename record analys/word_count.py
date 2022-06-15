@@ -1,3 +1,6 @@
+import time
+import random
+
 data = []
 count = 0
 with open ('reviews.txt', 'r') as f:
@@ -9,6 +12,7 @@ with open ('reviews.txt', 'r') as f:
 			print(len(data))
 print('档案读取完成，一共有', len(data),'笔资料')
 
+start_time = time.time()
 wc = {} #word count
 for d in data:
 	words = d.strip().split() #split预设值直接去掉空白
@@ -21,6 +25,8 @@ for d in data:
 for word in wc:
 	if wc[word] > 1000000:
 		print(word, wc[word])
+end_time = time.time()
+print('it takes', end_time - start_time, 'seconds to finish running')
 
 while True:
 	word = input('plz type the word: ')
